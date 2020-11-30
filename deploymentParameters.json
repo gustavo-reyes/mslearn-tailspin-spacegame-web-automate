@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "deployPrefix": {
+      "value": "-dev-"
+    },
+    "keyVaultName": {
+      "value": "tailspin-vault-23418"
+    },
+    "uniqueSuffix": {
+      "value": "98989"
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/db92d516-c93d-4e55-ba80-af3dd2708900/resourceGroups/tailspin-spacegame-web-rg/providers/Microsoft.KeyVault/vaults/tailspin-vault-23418"
+        },
+        "secretName": "adminPassword"
+      }
+    },
+    "firstRun": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/db92d516-c93d-4e55-ba80-af3dd2708900/resourceGroups/tailspin-spacegame-web-rg/providers/Microsoft.KeyVault/vaults/tailspin-vault-23418"
+        },
+        "secretName": "firstRun"
+      }
+    }
+  }
+}
